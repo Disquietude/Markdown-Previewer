@@ -9,4 +9,12 @@
 
 .Preview__content
   @extend .section__content
+  @import "../vendor/defaults"
   border: 1px solid $grey
+  padding: 5px
+  overflow: scroll
+  & td, th 
+    border: 2px solid black
+    padding: 5px
+  & ul 
+    list-style-type: initial

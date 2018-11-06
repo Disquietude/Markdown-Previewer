@@ -5,10 +5,7 @@ const initialState = "";
 let inputReducer = (state = initialState, action) => {
   switch(action.type) {
     case CHANGE_INPUT:
-      return {
-        ...state,
-        input: action.input
-      };
+      return action.input;
     default:
       return state;
   }

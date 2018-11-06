@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Editor extends Component {
-  // eslint-disable-next-line
-  constructor(props) {
-    super(props);
-  }
+import changeInput from '../../redux/actions/changeInput';
+
+class Editor extends Component {
   render() {
     return (
       <div className="Editor">
@@ -15,9 +14,21 @@ export default class Editor extends Component {
           <textarea 
             className="Editor__textarea"
             id="editor"
+            value={this.props.input}
+            onChange={(e) => (this.props.changeInput(e.target.value))}
           />
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  input: state.input
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  changeInput: (input) => dispatch(changeInput(input))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);
