@@ -11,10 +11,15 @@
   @extend .section__content
   @import "../vendor/defaults"
   border: 1px solid $grey
-  padding: 5px
   overflow: scroll
+  & em 
+    font-style: italic
+  & strong
+    font-weight: bold
   & td, th 
     border: 2px solid black
     padding: 5px
+  & ol 
+    list-style-type: decimal
   & ul 
     list-style-type: initial

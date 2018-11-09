@@ -4,6 +4,11 @@ import './sass/styles.sass';
 import App from './js/components/App';
 import * as serviceWorker from './serviceWorker';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faEllipsisV);
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

@@ -6,7 +6,12 @@ import changeInput from '../../redux/actions/changeInput';
 class Editor extends Component {
   render() {
     return (
-      <div className="Editor">
+      <div 
+        className="Editor"
+        style={{
+          width: this.props.width
+        }}
+      >
         <div className="Editor__header">
           <h1 className="Editor__title">Editor</h1>
         </div>
@@ -24,7 +29,8 @@ class Editor extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  input: state.input
+  input: state.input,
+  width: state.editorWidth
 })
 
 const mapDispatchToProps = (dispatch) => ({
